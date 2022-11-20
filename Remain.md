@@ -29,12 +29,15 @@
 
 => Khi sử dụng callback sẽ gặp phải trường hợp callback hell.
 
-- promise(Lời hứa):
+- promise(Lời hứa): là một object được sử dụng như một placeholder cho kết quả trong tương lai của hành động bất đồng bộ.
+  => Promise giống như một vùng chứa cho một giá trị được phân phối là bất đồng bộ.
+  Ngắn gọn hơn là một vùng chứa cho các giá trị trong tương lai.
+
   3 trạng thái
 
 * Pending: đang chờ
-* fulfilled: thành công
-* reject: thất bại
+* fulfilled: thành công => thu về giá trị mà ta mong muốn
+* reject: thất bại => đã xảy ra lỗi trong quá trình thực thi bất đồng bộ.
 
 => trả về phương 3 phương thức.
 (.then => thành công(resolve )
@@ -66,15 +69,31 @@
   }  
    }
 
+- Ajax (Asynchronous Javascript And XML):
+  cho phép chúng ta giao tiếp với các máy chủ web từ xa theo cách không đồng bộ.
+  Cho phép truy cập dữ liệu linh động
+- API (Application Programming API):
+  là một phần của phần mềm có thể được sử dụng bởi một phần mềm khác, cho phép các ứng dụng nói chuyện với nhau và trao đổi thông tin.
+  Như là một phần mềm độc lập cho phép các phần mềm khác tương tác với nó
+
 # 2. DOM: Document Object Model
 
-- cấu tạo gồm 3 thành phần
+- HTML DOM:
 
 * Element: thẻ tag trong file HTML
+  . cách lấy element trong Dom:
+  1. ID(getElementById) => lấy ra được một element
+  2. class(getElementsByClassName)
+  3. tag(getElementsByTagName)
+  4. querySelector
+  5. querySelectorAll
+  6. HTML collection
+  7. document.write.
 * Attribute: thuộc tính
-* Text
+* Text:
+  innerTexr
+  textContent
 
-- HTML DOM:
 - DOM API:
 - DOM event:
 
@@ -90,6 +109,7 @@
 
 - global scope: được khai báo bên ngoài hàm có thể truy cập ở khắp nơi( ngoài hàm, trong hàm)
 - local scope: được khai báo bên trong hàm và chỉ có thể truy cập ở phạm vị biến được khai báo.
+- block scope:
 
 # 4. function:
 
