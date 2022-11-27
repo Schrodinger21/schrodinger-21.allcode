@@ -29,11 +29,10 @@
 
 => Khi sử dụng callback sẽ gặp phải trường hợp callback hell.
 
-- promise(Lời hứa): là một object được sử dụng như một placeholder cho kết quả trong tương lai của hành động bất đồng bộ.
-  => Promise giống như một vùng chứa cho một giá trị được phân phối là bất đồng bộ.
-  Ngắn gọn hơn là một vùng chứa cho các giá trị trong tương lai.
+- promise(Lời hứa):
+  => là một cơ chế cho phép thực thi các nhiệm vụ bất đồng bộ.
 
-  3 trạng thái
+  promise trả về 3 trạng thái
 
 * Pending: đang chờ
 * fulfilled: thành công => thu về giá trị mà ta mong muốn
@@ -45,7 +44,7 @@
 .finally => khi trả về một trong hai kết quả(có thể có hoặc không)
 )
 
-- async/await: Giúp cấu trúc xử lý chương trình bất đồng bộ giống với xử lý đồng bộ.
+- async/await: Giúp cấu trúc xử lý chương trình bất đồng bộ giống với xử lý đồng bộ. giúp code ngắn gọn và dễ sử dụng.
 
 * async:
   khai báo một chương trình bất đồng bộ với từ khóa "async"
@@ -96,6 +95,16 @@
 
 - DOM API:
 - DOM event:
+
+- Thêm một Element vào HTML
+
+* document.createElement('thẻ')
+* document.createTextNode('Nôi dung của thẻ')
+
+- Xóa một Element trong DOM
+
+* document.getElementById(id).remove
+* document.querySelector(id/class).remove
 
 # 3a. Variable:
 
