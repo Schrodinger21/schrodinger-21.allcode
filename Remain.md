@@ -114,11 +114,11 @@
 - let: khai báo biến chỉ có thể truy cập được trong block bao quanh nó được xác định bằng cặp {}.
 - const: được sử dụng để khai báo 1 hằng số, khi khai báo cần gắn giá trị, giá trị sẽ không được thay đổi.
 
-# 3b: Block scope:
+# 3b: Scope: là không gian hoặc môi trường khai báo của một biến, nơi mà code có thể truy cập vào biến đó.
 
 - global scope: được khai báo bên ngoài hàm có thể truy cập ở khắp nơi( ngoài hàm, trong hàm)
-- local scope: được khai báo bên trong hàm và chỉ có thể truy cập ở phạm vị biến được khai báo.
-- block scope:
+- function scope(local scope): được khai báo bên trong hàm và chỉ có thể truy cập ở phạm vị hàm mà biến được khai báo.
+- block scope: là các biến được nằm trong cặp ngoặc nhọn{} có tình chất như function scope nhưng điểm khác biệt là chúng chỉ được áp dụng cho biến let
 
 # 4. function:
 
@@ -223,6 +223,30 @@ Câu lệnh điều kiện.
 * Kế thừa
 * Đa hình
 
-# 14. Execution Context, Call Stack
+# 14. Execution Context, Call Stack, Heap
 
-# 15.
+- CallStack: là nơi code được thực thi bằng cách sử dụng Execution Context. các EC sẽ được xếp chồng lên nhau và khi một EC thực hiện xong thì nó sẽ đc xóa khỏi stack => việc thực thi code này theo kiểu last in frist out.
+- Heap: là một vùng nhớ (memory pool) không có cấu trúc, lưu trữ tất cả các đối tượng mà ứng dụng cần.
+- Excution context: là môi trường thực thi đoạn code trong js, nơi nó được lưu trữ mọi thông tin cần thiết để code có thế thực thi như là biến toàn cục hay đối số truyền vào.
+
+* môi trường biến
+* Scope chain
+* từ khóa this
+
+# 15. Js: là ngôn ngữ laapk trình bậc cao, hướng đối tượng, có cơ chế quản lý bộ nhớ, được thông dịch hoặc biên dịch(Just-in-time) đơn luồng.
+
+- js engine:
+
+* là chương trình mà máy tính thực thi code js.
+* Bất kì một js engine cũng chứa callStack và heap
+
+- js runtime: nơi chưas tất cả những thứ cần thiết để sử dụng js.
+
+* Js engine
+* Web APIs(là một chức năng được cung cấp sẵn cho engine): giúp nó có quyền truy cập vào các API này thông qua đối tượng global wd
+* callback Queue: dữ liệu chứa các hàm callback sẵn các hàm chờ được thực thi, các hàm này được đặt vào trong stack để thực thi và quá trình này sảy ra theo cơ chế event loop.
+
+# 16: Primitives and Objects(primitive bà reference)
+
+- Primitves(kiểu dữ liệu nguyên thủy) => đc lưu trữ trong EC trong callstack
+- Reference (kiểu dữ liệu object) => được lưu trữ trong heap

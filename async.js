@@ -1,7 +1,5 @@
 "use strict";
 
-const { reject } = require("async");
-
 let info;
 console.info("test 1");
 
@@ -88,26 +86,67 @@ const wait = (sec) => {
 // }
 
 const createImage = (imgPath) => {
-  return new Promise(function (resolve, reject) {
-    const imgEl = document.createElement("img");
-    imgEl.scr = imgPath;
-  });
-  imgEl.addEventListener("load", function () {
-    im;
+  new Promise((resolve, reject) => {
+    const imgEL = document.createElement("img");
+    imgEL.src = imgPath;
+
+    imgEL.addEventListener("load", function () {
+      imgEL.classList.add("images");
+      document.body.appendChild(imgEL);
+      resolve(imgEL);
+    });
+    imgEL.addEventListener("error", function () {
+      reject(new Error("Bị lỗi"));
+    });
   });
 };
+// const upLoad = async () => {
+//   try {
+//     const imgEl = await createImage("./img/a1.jpg");
+//     await wait(4);
+//     imgEl.style.display = "none";
 
-const upLoad = async () => {
-  try {
-    const imgEl = await createImage("./img/a1.jpg");
-    await wait(4);
-    imgEl.style.display = "none";
+//     const imgEl2 = await createImage("./img/img_61484c622a514.png");
+//     await wait(3);
+//     imgEl2.style.display = "none";
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+// upLoad();
+// const upLoad = async () => {
+//   try {
+//     // const imgEL = await createImage("./img/a1.jpg");
+//     // await wait(2);
+//     // imgEL.style.display = "none";
 
-    const imgEl2 = await createImage("./img/img_61484c622a514.png");
-    await wait(3);
-    imgEl2.style.display = "none";
-  } catch (error) {
-    console.error(error);
-  }
-};
-upLoad();
+//     // const imgEL2 = await createImage("./img/img_61484c622a514.png");
+//     // await wait(3);
+//     // imgEL2.style.display = "none";
+//     // img 1
+//     const imgEl = await createImage(`img/a1.jpg`);
+//     await wait(2);
+//     imgEl.style.display = "none";
+
+//     // img 2
+//     const imgEl2 = await createImage(`img/img_61484c622a514.png`);
+//     await wait(2);
+//     imgEl2.style.display = "none";
+//     // img 3
+//     const imgEl3 = await createImage(`img/nobita-va-hon-dao-dieu-ki-hanh-trinh-muong-thu-1024x576.png`);
+//     await wait(2);
+//     imgEl3.style.display = "none";
+//     // Bắt lỗi, nếu trong try có lỗi thì cat
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+// upLoad();
+
+async function timChuXe() {
+  let f1 = await getInfof1();
+  let f2 = await getInfof2();
+  let f3 = await getInfof3();
+
+  return f1 + "-" + f2 + "-" + f3;
+}
