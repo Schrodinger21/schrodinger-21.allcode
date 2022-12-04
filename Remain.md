@@ -110,9 +110,12 @@
 
 Được coi là một thùng chứa có tên chứa dữ liệu được đưa vào.
 
-- var: khai báo biến có thể truy cập ở phạm vi hàm số hoặc bên ngoài hàm số, toàn cục.
+- var: khai báo biến có thể truy cập ở phạm vi hàm số hoặc bên ngoài hàm số, toàn cục và nó có hoisting.
 - let: khai báo biến chỉ có thể truy cập được trong block bao quanh nó được xác định bằng cặp {}.
 - const: được sử dụng để khai báo 1 hằng số, khi khai báo cần gắn giá trị, giá trị sẽ không được thay đổi.
+
+* obj có thể thay đổiđc thuộc tính bên trong.
+* có thể dùng freze để ngăn cản việc thay đổi thuộc tính bên trong của obj.
 
 # 3b: Scope: là không gian hoặc môi trường khai báo của một biến, nơi mà code có thể truy cập vào biến đó.
 
@@ -128,7 +131,7 @@ Nó được tái sử dụng nhiều lần.
 3 loại
 
 - Arrow function(hàm mũi tên):
-  giúp viết code ngắn gọn, dễ hiểu.
+  giúp viết code ngắn gọn, dễ hiểu. ko có từ khóa this
 - Declation function(De cơ rây sừn):
   bắt đầu bằng từ khóa function ở đầu và được đặt tên.
   có thể được gọi trước khi định nghĩa hàm.
@@ -148,7 +151,19 @@ Nó được tái sử dụng nhiều lần.
 
 # 7. closure
 
-Là môt hàm có thể ghi nhớ nơi mà nó được tạo ra và truy cập được biến ở bên ngoài phạm vi của nó.
+- Là một function trong function
+- Truy cập được các biến trong scope chain: global, localtion, block.
+
+* ví dụ:
+  function sayHello() {
+  var say = function() { console.log(hello); }
+  // Local variable that ends up within the closure
+  var hello = 'Hello, world!';
+
+  return say;
+  }
+  var sayHelloClosure = sayHello();
+  sayHelloClosure(); // ‘Hello, world!’
 
 # 8. Toán tử - và độ ưu tiên.
 
@@ -233,7 +248,7 @@ Câu lệnh điều kiện.
 * Scope chain
 * từ khóa this
 
-# 15. Js: là ngôn ngữ laapk trình bậc cao, hướng đối tượng, có cơ chế quản lý bộ nhớ, được thông dịch hoặc biên dịch(Just-in-time) đơn luồng.
+# 15. Js: là ngôn ngữ lập trình bậc cao, hướng đối tượng, có cơ chế quản lý bộ nhớ, được thông dịch hoặc biên dịch(Just-in-time) đơn luồng.
 
 - js engine:
 
@@ -246,7 +261,14 @@ Câu lệnh điều kiện.
 * Web APIs(là một chức năng được cung cấp sẵn cho engine): giúp nó có quyền truy cập vào các API này thông qua đối tượng global wd
 * callback Queue: dữ liệu chứa các hàm callback sẵn các hàm chờ được thực thi, các hàm này được đặt vào trong stack để thực thi và quá trình này sảy ra theo cơ chế event loop.
 
-# 16: Primitives and Objects(primitive bà reference)
+# 16: Primitives and Objects(primitive và reference)
 
 - Primitves(kiểu dữ liệu nguyên thủy) => đc lưu trữ trong EC trong callstack
 - Reference (kiểu dữ liệu object) => được lưu trữ trong heap
+
+- Phân biệt pass by value và pass by reference?
+
+# 17. Cách sử dụng từ khóa this
+
+- this chỉ tới một đối tượng mà nó đang thuộc về
+- this chỉ tồn tại ở các hàm thông thường

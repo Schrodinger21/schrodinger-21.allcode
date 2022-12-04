@@ -28,24 +28,24 @@ const animation = document.querySelector(".addText");
 // }, 5000);
 
 // thêm một Element vào HTML
-function add() {
-  let addP = document.createElement("p");
-  let text = document.createTextNode("Thẻ p vừa được thêm ^^");
-  addP.style.color = "blue";
-  addP.style.fontSize = "3rem";
-  addP.appendChild(text);
-  let dom = document.getElementsByTagName("body");
-  document.body.appendChild(addP, dom);
-}
-setTimeout(function () {
-  add();
-}, 5000);
-setTimeout(function () {
-  setStyle.style.fontSize = "4rem";
-  setTimeout(function () {
-    setStyle.style.color = "green";
-  }, 2000);
-}, 3000);
+// function add() {
+//   let addP = document.createElement("p");
+//   let text = document.createTextNode("Thẻ p vừa được thêm ^^");
+//   addP.style.color = "blue";
+//   addP.style.fontSize = "3rem";
+//   addP.appendChild(text);
+//   let dom = document.getElementsByTagName("body");
+//   document.body.appendChild(addP, dom);
+// }
+// setTimeout(function () {
+//   add();
+// }, 5000);
+// setTimeout(function () {
+//   setStyle.style.fontSize = "4rem";
+//   setTimeout(function () {
+//     setStyle.style.color = "green";
+//   }, 2000);
+// }, 3000);
 
 // Xóa phần tử trong DOM
 
@@ -68,75 +68,78 @@ setTimeout(function () {
 
 // Dom animation
 
-function myMove() {
-  let id = null;
-  const elem = document.getElementById("animate");
-  let pos = 0;
-  clearInterval(id);
-  id = setInterval(animations, 10);
-  function animations() {
-    if (pos == 250) {
-      clearInterval(id);
-    } else {
-      pos++;
-      elem.style.top = pos + "px";
-      elem.style.left = pos + "px";
-    }
-  }
-}
-myMove();
-function myMove2() {
-  let id = null;
-  const elem = document.getElementById("animate1");
-  let pos = 0;
-  clearInterval(id);
-  id = setInterval(animations, 8);
-  function animations() {
-    if (pos == 250) {
-      clearInterval(id);
-    } else {
-      pos++;
-      elem.style.top = pos + "px";
-      elem.style.right = pos + "px";
-    }
-  }
-}
-myMove2();
+// function myMove() {
+//   let id = null;
+//   const elem = document.getElementById("animate");
+//   let pos = 0;
+//   clearInterval(id);
+//   id = setInterval(animations, 10);
+//   function animations() {
+//     if (pos == 250) {
+//       clearInterval(id);
+//     } else {
+//       pos++;
+//       elem.style.top = pos + "px";
+//       elem.style.left = pos + "px";
+//     }
+//   }
+// }
+// myMove();
+// function myMove2() {
+//   let id = null;
+//   const elem = document.getElementById("animate1");
+//   let pos = 0;
+//   clearInterval(id);
+//   id = setInterval(animations, 8);
+//   function animations() {
+//     if (pos == 250) {
+//       clearInterval(id);
+//     } else {
+//       pos++;
+//       elem.style.top = pos + "px";
+//       elem.style.right = pos + "px";
+//     }
+//   }
+// }
+// myMove2();
 
-function move() {
-  const e = document.getElementById("testanima");
-  let w = 0;
-  const id = setInterval(testAnimation, 30);
-  function testAnimation() {
-    if (w == 100) {
-      clearInterval(id);
-    } else {
-      w++;
-      e.style.width = w + "%";
-    }
-  }
-}
-move();
-const addtext = document.getElementById("element");
-addtext.textContent = "Thêm textcontent vào html";
+// function move() {
+//   const e = document.getElementById("testanima");
+//   let w = 0;
+//   const id = setInterval(testAnimation, 30);
+//   function testAnimation() {
+//     if (w == 100) {
+//       clearInterval(id);
+//     } else {
+//       w++;
+//       e.style.width = w + "%";
+//     }
+//   }
+// }
+// move();
+// const addtext = document.getElementById("element");
+// addtext.textContent = "Thêm textcontent vào html";
 
-function changeText() {
-  const addText = document.getElementById("element2");
-  addText.textContent =
-    "Xin chào mọi người, tôi được thêm vào nhờ phương thức textContent ^^";
-  addText.style.color = "red";
-}
-setTimeout(function () {
-  changeText();
-}, 3000);
+// function changeText() {
+//   const addText = document.getElementById("element2");
+//   addText.textContent =
+//     "Xin chào mọi người, tôi được thêm vào nhờ phương thức textContent ^^";
+//   addText.style.color = "red";
+// }
+// setTimeout(function () {
+//   changeText();
+// }, 3000);
 
-function changeText3() {
-  const addText3 = document.getElementById("element3");
-  addText3.textContent =
-    "xin chào, tôi là phần tử được thay đổi nội dung thứ 3";
-  addText3.style.color = "green";
-  addText3.style.foneSize = "2rem";
-}
-setTimeout(function () {
-  changeText3();
-}, 5000);
+// function changeText3() {
+//   const addText3 = document.getElementById("element3");
+//   addText3.textContent =
+//     "xin chào, tôi là phần tử được thay đổi nội dung thứ 3";
+//   addText3.style.color = "green";
+//   addText3.style.foneSize = "2rem";
+// }
+// setTimeout(function () {
+//   changeText3();
+// }, 5000);
+
+console.log(document);
+document.write("Hello DOM");
