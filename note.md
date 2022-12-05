@@ -259,3 +259,25 @@ console.log(err);
 }
 }
 getUser();
+
+# Execution Context, Call Stack, Heap
+
+- CallStack: là nơi code được thực thi bằng cách sử dụng Execution Context. các EC sẽ được xếp chồng lên nhau và khi một EC thực hiện xong thì nó sẽ đc xóa khỏi stack => việc thực thi code này theo kiểu last in frist out.
+- Heap: là một vùng nhớ (memory pool) không có cấu trúc, lưu trữ tất cả các đối tượng mà ứng dụng cần.
+- Excution context: là môi trường thực thi đoạn code trong js, nơi nó được lưu trữ mọi thông tin cần thiết để code có thế thực thi như là biến toàn cục hay đối số truyền vào.
+
+# Object(đối tượng)
+
+- Đại diện cho môt thực thể:
+
+* property: chứa các thông tin về thuộc tính
+* method: những hành vi của đối tượng
+
+# Ajax, API
+
+- Ajax (Asynchronous Javascript And XML):
+  cho phép chúng ta giao tiếp với các máy chủ web từ xa theo cách không đồng bộ.
+  Cho phép truy cập dữ liệu linh động
+- API (Application Programming API):
+  là một phần của phần mềm có thể được sử dụng bởi một phần mềm khác, cho phép các ứng dụng nói chuyện với nhau và trao đổi thông tin.
+  Như là một phần mềm độc lập cho phép các phần mềm khác tương tác với nó
