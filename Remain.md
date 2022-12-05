@@ -90,7 +90,7 @@
   7. document.write.
 * Attribute: thuộc tính
 * Text:
-  innerTexr
+  innerText
   textContent
 
 - DOM API:

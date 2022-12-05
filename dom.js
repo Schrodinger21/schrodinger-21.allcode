@@ -130,16 +130,36 @@ const animation = document.querySelector(".addText");
 //   changeText();
 // }, 3000);
 
-// function changeText3() {
-//   const addText3 = document.getElementById("element3");
-//   addText3.textContent =
-//     "xin chào, tôi là phần tử được thay đổi nội dung thứ 3";
-//   addText3.style.color = "green";
-//   addText3.style.foneSize = "2rem";
-// }
-// setTimeout(function () {
-//   changeText3();
-// }, 5000);
+function changeText3() {
+  const addText3 = document.getElementById("element3");
+  addText3.textContent =
+    "xin chào, tôi là phần tử được thay đổi nội dung thứ 3";
+  addText3.style.color = "green";
+  addText3.style.foneSize = "2rem";
+}
+setTimeout(function () {
+  changeText3();
+}, 5000);
 
 console.log(document);
 document.write("Hello DOM");
+
+// const addEL = document.createElement("p");
+// const textEl = document.createTextNode("Nội dung mới được thêm qua Dom");
+// addEL.appendChild(textEl);
+// let domEl = document.getElementsByTagName("body");
+// document.body.appendChild(addEL, domEl);
+
+const add = document.createElement("a");
+const title = document.createTextNode("Thẻ mới được thêm");
+add.href = "#";
+add.appendChild(title);
+const domA = document.getElementsByTagName("body");
+document.body.appendChild(add, domA);
+
+function changeTextDiv() {
+  const changeDiv = document.getElementById("element2");
+  //   changeDiv.textContent = "Nội dung được sửa đổi của thẻ div";
+  changeDiv.innerHTML = "Nội dung được thay đổi bằng innerHTML";
+}
+changeTextDiv();
